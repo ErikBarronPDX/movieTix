@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Movie</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h4>Movie Theater!</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Welcome, movie theater owner. Enter the movies for this week in the designated time-slots as well as the rating for the movie.</p>
+      </div>
+    </div>
+    <form id="showtimeForm">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>12:00pm</h4>
+          <label for="labelMovieName12">Movie Name:</label>
+          <input type="text" id="inputMovieName12">
+          <select name="movieRating12" id="selectMovieRating12">
+            <option value="NA">Not Rated</option>
+            <option value="G">General Audience</option>
+            <option value="PG">Parental Guidance</option>
+            <option value="R">Restricted</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>3:00pm</h4>
+          <label for="labelMovieName15">Movie Name:</label>
+          <input type="text" id="inputMovieName15">
+          <select name="movieRating15" id="selectMovieRating15">
+            <option value="NA">Not Rated</option>
+            <option value="G">General Audience</option>
+            <option value="PG">Parental Guidance</option>
+            <option value="R">Restricted</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>6:00pm</h4>
+          <label for="labelMovieName18">Movie Name:</label>
+          <input type="text" id="inputMovieName18">
+          <select name="movieRating18" id="selectMovieRating18">
+            <option value="NA">Not Rated</option>
+            <option value="G">General Audience</option>
+            <option value="PG">Parental Guidance</option>
+            <option value="R">Restricted</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>9:00pm</h4>
+          <label for="labelMovieName21">Movie Name:</label>
+          <input type="text" id="inputMovieName21">
+          <select name="movieRating21" id="selectMovieRating21">
+            <option value="NA">Not Rated</option>
+            <option value="G">General Audience</option>
+            <option value="PG">Parental Guidance</option>
+            <option value="R">Restricted</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+
+    <div id="showtimes">
+      <h4>Click on a showtime to purchase tickets.</h4>
+      <div class="row">
+        <div class="col-md-3">
+          <h4>12:00 - <span id="displayMovieName12"></span></h4>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</body>
+</html>
