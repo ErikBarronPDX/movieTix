@@ -1,7 +1,19 @@
-#showtimes {
+#showtimes, #ownerInput {
   display: none;
 }
 
+#inputForm {
+  background-color: lightgray;
+  padding: 15px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 button {
-  margin-top: 25px;
+  float: right;
 }

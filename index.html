@@ -15,11 +15,115 @@
     <div class="jumbotron">
       <h4>Movie Theater!</h4>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p>Welcome, movie theater owner. Select which movie should play at which time and then hit submit. A website will be generated with showtimes and the ability to purchase tickets</p>
+
+    <div id="inputMovieNameDisplay">
+      <div class="row">
+        <div class="col-md-12">
+          Welcome, Movie Theater Owner. Please enter the Movie name, a brief description, and select the rating of the movie, then click "Add". When you are finished entering movies, click "Finish". 
+        </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <div id="inputForm">
+            <form id="inputForm">
+              <div class="row">
+                <div class="col-md-4">
+                  <p><strong>Movie Name:</strong></p>
+                </div>
+                <div class="col-md-8">
+                  <input type="text" id="inputMovieName" placeholder="Enter Movie Name...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p><strong>Movie Rating</strong></p>
+                </div>
+                <div class="col-md-8">
+                  <select name="inputRating" id="inputRating">
+                    <option value="NA">Not Rated</option>
+                    <option value="G">General Audience</option>
+                    <option value="PG13">Parental Guidance</option>
+                    <option value="R">Restricted</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p><strong>Movie Synopsis</strong></p>
+                </div>
+                <div class="col-md-8">
+                  <textarea name="movieSynopsis" id="movieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..."></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="submit" id="submitMovieButton" class="btn btn-success">Enter Movie</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+
+
+
+
+      <!-- <div id="inputForm">
+        <form id="inputForm">
+          <div class="row">
+            <div class="col-md-2">
+              <p><strong>Movie Name:</strong></p>
+            </div>
+            <div class="col-md-4">
+              <input type="text" id="inputMovieName" placeholder="Enter Movie Name...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <p><strong>Movie Rating</strong></p>
+            </div>
+            <div class="col-md-4">
+              <select name="inputRating" id="inputRating">
+                <option value="NA">Not Rated</option>
+                <option value="G">General Audience</option>
+                <option value="PG13">Parental Guidance</option>
+                <option value="R">Restricted</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <p><strong>Movie Synopsis</strong></p>
+            </div>
+            <div class="col-md-4">
+              <textarea name="movieSynopsis" id="movieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..."></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="submit" id="submitMovieButton" class="btn btn-success">Enter Movie</button>
+            </div>
+          </div>
+        </form>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="ownerInput">
       <form id="showtimeForm">
         <div class="row">

@@ -4,9 +4,7 @@ function Movie(movieName, movieRating, movieShowtime) {
   this.movieShowtime = movieShowtime;
 }
 
-var movies {
-  movieName
-}
+
 
 $(document).ready(function() {
 
