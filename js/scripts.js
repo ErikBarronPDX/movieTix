@@ -1,6 +1,11 @@
-function Movie(movieName, movieRating) {
+function Movie(movieName, movieRating, movieShowtime) {
   this.movieName = movieName;
   this.movieRating = movieRating;
+  this.movieShowtime = movieShowtime;
+}
+
+var movies {
+  movieName
 }
 
 $(document).ready(function() {
@@ -8,6 +13,16 @@ $(document).ready(function() {
 
   $("form#showtimeForm").submit(function(event) {
     event.preventDefault();
+
+    var movieSlot12 = $("select#selectMovie12").val();
+    var movieSlot15 = $("select#selectMovie15").val();
+    var movieSlot18 = $("select#selectMovie18").val();
+    var movieSlot21 = $("select#selectMovie21").val();
+
+    console.log(movieSlot12, movieSlot15, movieSlot18, movieSlot21);
+
+
+
     var inputtedMovieName12 = $("input#inputMovieName12").val();
     var inputtedMovieRating12 = $("select#selectMovieRating12").val();
     var newMovie12 = new Movie (inputtedMovieName12, inputtedMovieRating12);
