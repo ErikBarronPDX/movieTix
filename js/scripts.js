@@ -13,10 +13,18 @@ MovieList.prototype.addMovie = function(movie) {
 }
 
 function displayMovieList(movieListToDisplay) {
-  var movieList = $("ul#movieList");
+  var movieList = $("#movieList");
   var htmlForMovieList = "";
   movieListToDisplay.movies.forEach(function(movie) {
-    htmlForMovieList += "<li><p><strong>" + movie.movieName + "</strong></p><br>" + "<p> Rated: " + movie.movieRating + "</p><br>" + "<p> Synopsis: " + movie.movieSynopsis + "</p></li>"
+    htmlForMovieList += 
+    "<div class='row'>" + 
+      "<div class='col-md-3'>" + movie.movieName + "</div>" + 
+      "<div class='col-md-3'>" + movie.movieRating + "</div>" + 
+      "<div class='col-md-6'>" + movie.movieSynopsis + "</div>" +
+    "</div>"
+    
+    
+    // "<li><p><strong>" + movie.movieName + "</strong></p><br>" + "<p> Rated: " + movie.movieRating + "</p><br>" + "<p> Synopsis: " + movie.movieSynopsis + "</p></li>"
   });
   movieList.html(htmlForMovieList);
 };

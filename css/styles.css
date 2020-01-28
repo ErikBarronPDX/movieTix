@@ -17,3 +17,7 @@ input[type=text], select, textarea {
 button {
   float: right;
 }
+
+ul#movieList {
+  margin: 0px;
+}

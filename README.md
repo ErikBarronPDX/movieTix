@@ -1,4 +1,4 @@
-This will create a mock-app for a single-screen theater to post showtimes and the option to buy tickets.
+This will create a mock-app for a theater to enter movies, select showtimes post showtimes and the option to buy tickets.
 
 Website will prompty for user-input for 4 different showtimes, 12, 3, 6, 9. User will input movie name and rating. 
 
