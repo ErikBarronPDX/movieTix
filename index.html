@@ -22,10 +22,8 @@
           Welcome, Movie Theater Owner. Please enter the Movie name, a brief description, and select the rating of the movie, then click "Add". When you are finished entering movies, click "Finish". 
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-6">
-
           <div id="inputForm">
             <form id="inputForm">
               <div class="row">
@@ -41,7 +39,7 @@
                   <p><strong>Movie Rating</strong></p>
                 </div>
                 <div class="col-md-8">
-                  <select name="inputRating" id="inputRating">
+                  <select name="inputMovieRating" id="inputMovieRating">
                     <option value="NA">Not Rated</option>
                     <option value="G">General Audience</option>
                     <option value="PG13">Parental Guidance</option>
@@ -54,7 +52,7 @@
                   <p><strong>Movie Synopsis</strong></p>
                 </div>
                 <div class="col-md-8">
-                  <textarea name="movieSynopsis" id="movieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..."></textarea>
+                  <textarea name="inputMovieSynopsis" id="inputMovieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..."></textarea>
                 </div>
               </div>
               <div class="row">
@@ -64,10 +62,11 @@
               </div>
             </form>
           </div>
-
         </div>
         <div class="col-md-6">
-
+          <p>Movie List:</p>
+          <ul id="movieList">
+          </ul>
         </div>
       </div>
 
