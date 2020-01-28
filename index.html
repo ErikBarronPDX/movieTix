@@ -15,7 +15,6 @@
     <div class="jumbotron">
       <h4>Movie Theater!</h4>
     </div>
-
     <div id="inputMovieNameDisplay">
       <div class="row">
         <div class="col-md-12">
@@ -31,7 +30,7 @@
                   <p><strong>Movie Name:</strong></p>
                 </div>
                 <div class="col-md-8">
-                  <input type="text" id="inputMovieName" placeholder="Enter Movie Name...">
+                  <input type="text" id="inputMovieName" placeholder="Enter Movie Name..." required>
                 </div>
               </div>
               <div class="row">
@@ -39,7 +38,7 @@
                   <p><strong>Movie Rating</strong></p>
                 </div>
                 <div class="col-md-8">
-                  <select name="inputMovieRating" id="inputMovieRating">
+                  <select name="inputMovieRating" id="inputMovieRating" required>
                     <option value="NA">Not Rated</option>
                     <option value="G">General Audience</option>
                     <option value="PG13">Parental Guidance</option>
@@ -52,7 +51,7 @@
                   <p><strong>Movie Synopsis</strong></p>
                 </div>
                 <div class="col-md-8">
-                  <textarea name="inputMovieSynopsis" id="inputMovieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..."></textarea>
+                  <textarea name="inputMovieSynopsis" id="inputMovieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..." required></textarea>
                 </div>
               </div>
               <div class="row">
@@ -63,142 +62,51 @@
             </form>
           </div>
         </div>
-        <div class="col-md-6">
-
-          <div class="panel">
-            <div class="panel-header">
+        <div id="movieListDisplay">
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-header">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Movie Name</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Movie Rating</h6>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Synopsis</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div id="movieList">
+                </div>
+              </div>
               <div class="row">
-                <div class="col-md-3">
-                  <h6>Movie Name</h6>
+                <div class="col-md-12">
+                  <button id="doneEnteringMoviesButton" class="btn btn-danger">Finish</button>
                 </div>
-                <div class="col-md-3">
-                  <h6>Movie Rating</h6>
-                </div>
-                <div class="col-md-6">
-                  <h6>Synopsis</h6>
-                </div>
-              </div>
-            </div>
-            <div class="panel-body">
-              <div id="movieList">
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-      <!-- <div id="inputForm">
-        <form id="inputForm">
-          <div class="row">
-            <div class="col-md-2">
-              <p><strong>Movie Name:</strong></p>
-            </div>
-            <div class="col-md-4">
-              <input type="text" id="inputMovieName" placeholder="Enter Movie Name...">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <p><strong>Movie Rating</strong></p>
-            </div>
-            <div class="col-md-4">
-              <select name="inputRating" id="inputRating">
-                <option value="NA">Not Rated</option>
-                <option value="G">General Audience</option>
-                <option value="PG13">Parental Guidance</option>
-                <option value="R">Restricted</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <p><strong>Movie Synopsis</strong></p>
-            </div>
-            <div class="col-md-4">
-              <textarea name="movieSynopsis" id="movieSynopsis"  rows="4" placeholder="Enter Movie Synopsis Here..."></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <button type="submit" id="submitMovieButton" class="btn btn-success">Enter Movie</button>
-            </div>
-          </div>
-        </form>
-      </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="ownerInput">
-      <form id="showtimeForm">
-        <div class="row">
-          <div class="col-md-3">
-            <h4>12:00pm</h4>
-            <select name="movie12" id="selectMovie12">
-              <option value="1">Children's Movie Part II (Rated: G)</option>
-              <option value="2">Latest Blockbuster (Rated: PG-13)</option>
-              <option value="3">Steamy Romance (Rated: R)</option>
-              <option value="4">Arthouse Film (Rated: NR)</option>
-            </select>
-          </div>
-          <div class="col-md-3">
-            <h4>3:00pm</h4>
-            <select name="movie15" id="selectMovie15">
-              <option value="1">Children's Movie Part II (Rated: G)</option>
-              <option value="2">Latest Blockbuster (Rated: PG-13)</option>
-              <option value="3">Steamy Romance (Rated: R)</option>
-              <option value="4">Arthouse Film (Rated: NR)</option>
-            </select>
-          </div>
-          <div class="col-md-3">
-            <h4>6:00pm</h4>
-            <select name="movie18" id="selectMovie18">
-              <option value="1">Children's Movie Part II (Rated: G)</option>
-              <option value="2">Latest Blockbuster (Rated: PG-13)</option>
-              <option value="3">Steamy Romance (Rated: R)</option>
-              <option value="4">Arthouse Film (Rated: NR)</option>
-            </select>
-          </div>
-          <div class="col-md-3">
-            <h4>9:00pm</h4>
-            <select name="movie21" id="selectMovie21">
-              <option value="1">Children's Movie Part II (Rated: G)</option>
-              <option value="2">Latest Blockbuster (Rated: PG-13)</option>
-              <option value="3">Steamy Romance (Rated: R)</option>
-              <option value="4">Arthouse Film (Rated: NR)</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <button type="submit">Submit</button>
-          </div>
-        </div>
-      </form>
     </div>
-    <hr>
 
-
-    <div id="showtimes">
-      <h4>Click on a showtime to purchase tickets.</h4>
+    <div id="howManyTheatersPanel">
       <div class="row">
-        <div class="col-md-3">
-          <h4>12:00 - <span id="displayMovieName12"></span></h4>
+        <div class="col-md-4">
+          <p>How many screening rooms does your theater have?</p>
+          <input type="number" id="inputHowManyTheaters" required>
+          <button class="btn btn-success" id="submitHowManyTheaterPanelButton">Submit</button>
         </div>
       </div>
     </div>
-    
+
+    <div id="timetableInput">
+      
+    </div>
+
 
   </div>
 </body>
