@@ -2,17 +2,10 @@ body {
   background-color: rgb(0, 0, 63);
 }
 
-#showtimes, #ownerInput, #howManyTheatersPanel, #inputMovieNameDisplay{
+#showtimes, #ownerInput, #howManyTheatersPanel, #inputMovieNameDisplay, #timetableFormSection {
   display: none;
 }
 
-div#inputForm {
-  background-color: lightskyblue;
-  padding: 15px;
-  margin: 0px;
-  border: 1px solid #007ce2;
-  border-radius: 5px;
-}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -44,7 +37,7 @@ ul#movieList {
   border-radius: 5px;
 }
 
-.panel, .jumbotron, .timetableFormColumn{
+.jumbotron, .timetableFormColumn{
   background-color: #0a1128;
 }
 
@@ -53,10 +46,6 @@ ul#movieList {
 }
 
 
-
-.panel-header {
-  padding-left: 20px;
-}
 
 h6 {
   color: rgb(136, 136, 136);
@@ -69,10 +58,35 @@ h4 {
   font-family: "Ariel Black";
 }
 
-.theaterRoomRow {
+
+.contentRow {
+  background-color: #0a1128;
+  margin: 1px;
+  padding: 5px;
+  border: 1px solid #003968;
+  border-radius: 5px;
+}
+
+.contentColumn {
   background-color: #0ca4a5;
   padding: 5px;
   border: 1px solid #007ce2;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+
+  #movieListDisplayTitles {
+    display: none;
+  }
+
+
+
+}
+
+@media (min-width: 992px) {
+  .smallScreen {
+    display: none;
+  }
 }

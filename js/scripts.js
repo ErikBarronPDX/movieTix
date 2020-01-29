@@ -25,9 +25,11 @@ function displayMovieList(movieListToDisplay) {
   movieListToDisplay.movies.forEach(function(movie) {
     htmlForMovieList += 
     "<div class='row individualMovies'>" + 
-      "<div class='col-md-3'>" + movie.movieName + "</div>" + 
-      "<div class='col-md-1'>" + movie.movieRating + "</div>" + 
-      "<div class='col-md-8'>" + movie.movieSynopsis + "</div>" +
+      "<div class='col-md-3'><span class='smallScreen'><strong>Name: </strong></span>" + movie.movieName + "</div>" + 
+      "<div class='col-md-1'><span class='smallScreen'><strong>Rating: </strong></span>" + movie.movieRating + "</div>" + 
+
+      "<div class='col-md-8'><span class='smallScreen'><strong>Synopsis: </strong></span>" + movie.movieSynopsis + "</div>" +
+   
     "</div>"
   });
   movieList.html(htmlForMovieList);
@@ -41,7 +43,7 @@ function generateTimetableForm(inputMovieDatabase, numberOfTheaters) {
   while ( i <= numberOfTheaters) {
     htmlForTimetable += 
       "<div class='row'>" + 
-        "<div class='col-md-12 theaterRoomRow'>" +
+        "<div class='col-md-12 contentColumn'>" +
           "<p><strong>Theater " + i + "</strong></p>" +
           "<div class='row'>" +
             "<div class='col-md-3'><p>12:00pm</p><select id='" + i + "_1200'>" + htmlForSelector + "</select></div>" +
@@ -71,7 +73,7 @@ function generateMovieSelector(inputMovieDatabase) {
 //Front End
 var movieDatabase = new MovieList();
 var starterMovieKids = new Movie("That Children's Movie Part III", "G", "It's your kid's favorite character, but for the third time! We can't promise that we got rid of his annoying laugh. In fact, it's worse. It's better that we're up-front about this.")
-var starterMovieBlockbuster = new Movie("Latest Superhero Blockbuster", "PG", "In a world where noxious chemicals actually cause superpowers instead of death, a man lies on his deathbed after contact with noxious chemicals. To say that there is a twist ending would actually be a spoiler in and of itself. So we won't.")
+var starterMovieBlockbuster = new Movie("Latest Superhero Blockbuster", "PG-13", "In a world where noxious chemicals actually cause superpowers instead of death, a man lies on his deathbed after contact with noxious chemicals. To say that there is a twist ending would actually be a spoiler in and of itself. So we won't.")
 var starterMovieRomance = new Movie("Steamy Romance", "R", "An intense study about the birds and the bees. This movie has everything. Someone even drops trou!")
 movieDatabase.addMovie(starterMovieKids);
 movieDatabase.addMovie(starterMovieBlockbuster);
