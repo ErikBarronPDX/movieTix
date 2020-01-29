@@ -97,8 +97,7 @@ $(document).ready(function() {
     displayMovieList(movieDatabase);
   });
 
-  $("form#inputForm").submit(function(event) {
-    event.preventDefault();
+  $("#submitMovieButton").click(function() {
     var inputtedMovieName = $("input#inputMovieName").val();
     var inputtedMovieRating = $("select#inputMovieRating").val();
     var inputtedMovieSynopsis = $("textarea#inputMovieSynopsis").val();
