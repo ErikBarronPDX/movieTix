@@ -105,12 +105,17 @@ $(document).ready(function() {
     movieDatabase.addMovie(newMovie);
     displayMovieList(movieDatabase);
     $("#inputMovieNameDisplay").slideUp();
-    $("#toggleAddMovie").fadeIn();
+    $("#toggleAddMovie").css("background-color", "");
+    $("#doneEnteringMoviesButton").css("background-color", "")
     });
 
   $("#doneEnteringMoviesButton").click(function() {
-    $("#inputMovieNameDisplay").hide();
-    $("#howManyTheatersPanel").show();
+    if ($("#inputMovieNameDisplay").is(":visible")){
+      alert("Please submit or cancel adding a movie");
+    } else {
+      $("#inputMovieNameDisplay").hide();
+      $("#howManyTheatersPanel").show();
+    }
     console.log(movieDatabase);
   });
 
@@ -120,18 +125,23 @@ $(document).ready(function() {
   });
 
   $("#toggleAddMovie").click(function() {
-    $("#toggleAddMovie").css("background-color", "#007ce200");
-    $("#doneEnteringMoviesButton").css("background-color", "#007ce200");
-    $("#inputMovieNameDisplay").slideDown();
-  })
+
+    if ($("#inputMovieNameDisplay").is(":visible")){
+      alert("Please submit or cancel adding a movie");
+    } else {
+      $("#toggleAddMovie").css("background-color", "#007ce200");
+      $("#doneEnteringMoviesButton").css("background-color", "#007ce200");
+      $("#inputMovieNameDisplay").slideDown();
+    }
+  });
 
   $("#cancelEnteringMovieButton").click(function() {
     $("#inputMovieNameDisplay").slideUp();
     $("input#inputMovieName").val("");
     $("select#inputMovieRating").val("NA");
     $("textarea#inputMovieSynopsis").val("");
-    $("#toggleAddMovie").css("");
-    $("#doneEnteringMoviesButton").css("");
+    $("#toggleAddMovie").css("background-color", "");
+    $("#doneEnteringMoviesButton").css("background-color", "");
   });
 
 });
