@@ -1,10 +1,17 @@
-#showtimes, #ownerInput, #movieListDisplay, #howManyTheatersPanel{
+body {
+  background-color: rgb(0, 0, 63);
+}
+
+#showtimes, #ownerInput, #howManyTheatersPanel, #inputMovieNameDisplay{
   display: none;
 }
 
-#inputForm {
-  background-color: lightgray;
+div#inputForm {
+  background-color: lightskyblue;
   padding: 15px;
+  margin: 0px;
+  border: 1px solid #007ce2;
+  border-radius: 5px;
 }
 
 input[type=text], select, textarea {
@@ -14,10 +21,48 @@ input[type=text], select, textarea {
   border-radius: 5px;
 }
 
-button {
+#doneEnteringMoviesButton, #submitMovieButton {
   float: right;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+#toggleAddMovie, #cancelEnteringMovieButton {
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 ul#movieList {
   margin: 0px;
+}
+
+.individualMovies {
+  background-color: #0ca4a5 ;
+  margin: 5px;
+  border: 1px solid #007ce2;
+  border-radius: 5px;
+}
+
+.panel, .jumbotron {
+  background-color: #0a1128;
+}
+
+.jumbotron {
+  padding: 10px;
+}
+
+.panel-header {
+  padding-left: 20px;
+}
+
+h6 {
+  color: rgb(136, 136, 136);
+}
+
+h4 {
+  color: rgb(136, 136, 136);
+  text-align: center;
+  font-size: 40px;
+  font-family: "Ariel Black";
 }

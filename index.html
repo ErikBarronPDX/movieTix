@@ -13,14 +13,52 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h4>Movie Theater!</h4>
+      <h4>Reel-to-Reel Cinemas</h4>
     </div>
-    <div id="inputMovieNameDisplay">
+
+    <div class="row">
+      <div class="col-md-12">
+        Welcome, Movie Theater Owner. Please enter the Movie name, a brief description, and select the rating of the movie, then click "Add". When you are finished entering movies, click "Finish". 
+      </div>
+    </div>
+
+    <div id="movieListDisplay">
       <div class="row">
         <div class="col-md-12">
-          Welcome, Movie Theater Owner. Please enter the Movie name, a brief description, and select the rating of the movie, then click "Add". When you are finished entering movies, click "Finish". 
+          <div class="panel">
+            <div class="panel-header">
+              <div class="row">
+                <div class="col-md-3">
+                  <h6>Name</h6>
+                </div>
+                <div class="col-md-1">
+                  <h6>Rating</h6>
+                </div>
+                <div class="col-md-8">
+                  <h6>Synopsis</h6>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div id="movieList">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button id="toggleAddMovie" class="btn btn-success">Add Movie</button>
+              </div>
+              <div class="col-md-6">
+                <button id="doneEnteringMoviesButton" class="btn btn-danger">Finish</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+
+<!--Enter New Movie Starts Here-->
+    <div id="inputMovieNameDisplay">
       <div class="row">
         <div class="col-md-6">
           <div id="inputForm">
@@ -55,43 +93,20 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
+                  <button id="cancelEnteringMovieButton" class="btn btn-danger">Cancel</button>
+                </div>
+                <div class="col-md-6">
                   <button type="submit" id="submitMovieButton" class="btn btn-success">Enter Movie</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
-        <div id="movieListDisplay">
-          <div class="col-md-6">
-            <div class="panel">
-              <div class="panel-header">
-                <div class="row">
-                  <div class="col-md-3">
-                    <h6>Movie Name</h6>
-                  </div>
-                  <div class="col-md-3">
-                    <h6>Movie Rating</h6>
-                  </div>
-                  <div class="col-md-6">
-                    <h6>Synopsis</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="panel-body">
-                <div id="movieList">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <button id="doneEnteringMoviesButton" class="btn btn-danger">Finish</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+<!--Enter New Movie Ends Here-->
+
 
     <div id="howManyTheatersPanel">
       <div class="row">
