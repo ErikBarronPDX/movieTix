@@ -27,16 +27,14 @@ function displayMovieList(movieListToDisplay) {
     "<div class='row individualMovies'>" + 
       "<div class='col-md-3'><span class='smallScreen'><strong>Name: </strong></span>" + movie.movieName + "</div>" + 
       "<div class='col-md-1'><span class='smallScreen'><strong>Rating: </strong></span>" + movie.movieRating + "</div>" + 
-
       "<div class='col-md-8'><span class='smallScreen'><strong>Synopsis: </strong></span>" + movie.movieSynopsis + "</div>" +
-   
     "</div>"
   });
   movieList.html(htmlForMovieList);
 };
 
 function generateTimetableForm(inputMovieDatabase, numberOfTheaters) {
-  var timetable = $("#timetableInput");
+  var timetable = $("#editScheduleInput");
   var htmlForTimetable = "";
   var htmlForSelector = generateMovieSelector(inputMovieDatabase);
   var i = 1;
@@ -72,9 +70,9 @@ function generateMovieSelector(inputMovieDatabase) {
 
 //Front End
 var movieDatabase = new MovieList();
-var starterMovieKids = new Movie("That Children's Movie Part III", "G", "It's your kid's favorite character, but for the third time! We can't promise that we got rid of his annoying laugh. In fact, it's worse. It's better that we're up-front about this.")
-var starterMovieBlockbuster = new Movie("Latest Superhero Blockbuster", "PG-13", "In a world where noxious chemicals actually cause superpowers instead of death, a man lies on his deathbed after contact with noxious chemicals. To say that there is a twist ending would actually be a spoiler in and of itself. So we won't.")
-var starterMovieRomance = new Movie("Steamy Romance", "R", "An intense study about the birds and the bees. This movie has everything. Someone even drops trou!")
+var starterMovieKids = new Movie("That Children's Movie Part III", "G", "It's your kid's favorite character, but for the third time! The plot has only thinned out since the last installment and there is this new annoying character that gets introduced. You probably won't enjoy this but your kid might. It's better that we're up-front about this.")
+var starterMovieBlockbuster = new Movie("Latest Superhero Blockbuster", "PG-13", "In a world where contact with noxious chemicals cause superpowers instead of death, a man lies on his deathbed after contact with noxious chemicals. To say that there is a twist ending would actually be a spoiler. So we won't.")
+var starterMovieRomance = new Movie("Steamy Romance", "R", "An intense study about the birds and the bees. You'd better leave your kids with a sitter for this one. Unless you plan on having to explain a few concepts afterwards.")
 movieDatabase.addMovie(starterMovieKids);
 movieDatabase.addMovie(starterMovieBlockbuster);
 movieDatabase.addMovie(starterMovieRomance);
@@ -84,6 +82,17 @@ movieDatabase.addMovie(starterMovieRomance);
 
 $(document).ready(function() {
   displayMovieList(movieDatabase);
+
+  $("#buttonAddMovie").click(function() {
+
+    if ($("#newMovieDisplay").is(":visible")){
+      alert("Please submit or cancel adding a movie");
+    } else {
+      $("#buttonAddMovie").css("background-color", "#007ce200");
+      $("#buttonFinishMovieList").css("background-color", "#007ce200");
+      $("#newMovieDisplay").slideDown();
+    }
+  });
 
   $("#submitEnterMovieButton").click(function() {
     var inputtedMovieName = $("input#inputMovieName").val();
@@ -97,57 +106,49 @@ $(document).ready(function() {
     displayMovieList(movieDatabase);
   });
 
-  $("#submitMovieButton").click(function() {
+  $("#buttonSubmitMovie").click(function() {
     var inputtedMovieName = $("input#inputMovieName").val();
     var inputtedMovieRating = $("select#inputMovieRating").val();
     var inputtedMovieSynopsis = $("textarea#inputMovieSynopsis").val();
-    $("input#inputMovieName").val("");
-    $("select#inputMovieRating").val("NA");
-    $("textarea#inputMovieSynopsis").val("");
-    var newMovie = new Movie(inputtedMovieName, inputtedMovieRating, inputtedMovieSynopsis)
-    movieDatabase.addMovie(newMovie);
-    displayMovieList(movieDatabase);
-    $("#inputMovieNameDisplay").slideUp();
-    $("#toggleAddMovie").css("background-color", "");
-    $("#doneEnteringMoviesButton").css("background-color", "")
-    });
 
-  $("#doneEnteringMoviesButton").click(function() {
-    if ($("#inputMovieNameDisplay").is(":visible")){
+    if (!inputtedMovieName){
+      alert("Enter Movie Name");
+    } else if (!inputtedMovieRating) {
+      alert("Select Movie Rating");
+    } else if (!inputtedMovieSynopsis) {
+      alert("Enter Movie Synopsis");
+    } else {
+      $("input#inputMovieName").val("");
+      $("select#inputMovieRating").val("NA");
+      $("textarea#inputMovieSynopsis").val("");
+      var newMovie = new Movie(inputtedMovieName, inputtedMovieRating, inputtedMovieSynopsis)
+      movieDatabase.addMovie(newMovie);
+      displayMovieList(movieDatabase);
+      $("#newMovieDisplay").slideUp();
+      $("#buttonAddMovie").css("background-color", "");
+      $("#buttonFinishMovieList").css("background-color", "");
+    }
+  });
+
+  $("#buttonFinishMovieList").click(function() {
+    if ($("#newMovieDisplay").is(":visible")){
       alert("Please submit or cancel adding a movie");
     } else {
-      $("#inputMovieNameDisplay").hide();
-      $("#toggleAddMovie").hide();
-      $("#doneEnteringMoviesButton").hide();
-      $("#howManyTheatersPanel").show();
+      $("#newMovieDisplay").hide();
+      $("#buttonAddMovie").hide();
+      $("#buttonFinishMovieList").hide();
+      $("#screenRoomDisplay").show();
     }
     console.log(movieDatabase);
   });
 
-  $("#submitHowManyTheaterPanelButton").click(function() {
-    var theaters = parseInt($("#inputHowManyTheaters").val());
+  $("#buttonSubmitScreenRoom").click(function() {
+    var theaters = parseInt($("#inputScreenRoom").val());
     generateTimetableForm(movieDatabase, theaters);
-    $("#howManyTheatersPanel").hide();
+    $("#screenRoomDisplay").hide();
+    $("#editScheduleDisplay").show();
   });
 
-  $("#toggleAddMovie").click(function() {
 
-    if ($("#inputMovieNameDisplay").is(":visible")){
-      alert("Please submit or cancel adding a movie");
-    } else {
-      $("#toggleAddMovie").css("background-color", "#007ce200");
-      $("#doneEnteringMoviesButton").css("background-color", "#007ce200");
-      $("#inputMovieNameDisplay").slideDown();
-    }
-  });
-
-  $("#cancelEnteringMovieButton").click(function() {
-    $("#inputMovieNameDisplay").slideUp();
-    $("input#inputMovieName").val("");
-    $("select#inputMovieRating").val("NA");
-    $("textarea#inputMovieSynopsis").val("");
-    $("#toggleAddMovie").css("background-color", "");
-    $("#doneEnteringMoviesButton").css("background-color", "");
-  });
 
 });

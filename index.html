@@ -37,10 +37,10 @@
           </div> 
           <div class="row">
             <div class="col-md-6">
-              <button id="toggleAddMovie" class="btn btn-success">Add Movie</button>
+              <button id="buttonAddMovie" class="btn btn-success">Add Movie</button>
             </div>
             <div class="col-md-6">
-              <button id="doneEnteringMoviesButton" class="btn btn-danger">Finish</button>
+              <button id="buttonFinishMovieList" class="btn btn-danger">Finish</button>
             </div>
           </div>
         </div>
@@ -48,8 +48,8 @@
     </div>
 <!--Movie List Ends Here-->
 
-<!--Enter New Movie Starts Here-->
-    <div id="inputMovieNameDisplay">
+<!--New Movie Starts Here-->
+    <div id="newMovieDisplay">
       <div class="row contentRow">
         <div class="col-md-12 contentColumn">
          <div class="row">
@@ -83,51 +83,38 @@
          </div>
          <div class="row">
            <div class="col-md-6">
-             <button id="cancelEnteringMovieButton" class="btn btn-danger">Cancel</button>
            </div>
            <div class="col-md-6">
-             <button id="submitMovieButton" class="btn btn-success">Submit</button>
+             <button id="buttonSubmitMovie" class="btn btn-success">Submit</button>
            </div>
          </div>
         </div>
       </div>
     </div>
-<!--Enter New Movie Ends Here-->
+<!--New Movie Ends Here-->
 
 <!--Enter Screen Room # Starts Here-->
-    <div id="howManyTheatersPanel">
+    <div id="screenRoomDisplay">
       <div class="row contentRow">
         <div class="col-md-12 contentColumn">
           <p>How many screening rooms does your theater have?</p>
-          <input type="number" id="inputHowManyTheaters" required>
-          <button class="btn btn-success" id="submitHowManyTheaterPanelButton">Submit</button>
+          <input type="number" id="inputScreenRoom" required>
+          <button class="btn btn-success" id="buttonSubmitScreenRoom">Submit</button>
         </div>
       </div>
     </div>
 <!--Enter Screen Room # Ends Here-->
 
-<!--Timetable Form Starts Here-->
-    <div id="timetableFormSection">
-
-      <div class="row">
-        <div class="col-md-12 timetableFormColumn">
-  
-          <div class="panel">
-            <div class="panel-header">
-              <h2>Set Schedule:</h2>
-            </div>
-            <div class="panel-body">
-            </div>
-          </div>
-  
-  
-          <div id="timetableInput">
+<!--Edit Schedule Starts Here-->
+    <div id="editScheduleDisplay">
+      <div class="row contentRow">
+        <div class="col-md-12">
+          <div id="editScheduleInput">
           </div>
         </div>
       </div>
-
     </div>
-<!--Timetable Form Ends Here-->
+<!--Edit Schedule Ends Here-->
 
   </div>
 </body>
