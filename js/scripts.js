@@ -40,15 +40,17 @@ function generateTimetableForm(inputMovieDatabase, numberOfTheaters) {
   var i = 1;
   while ( i <= numberOfTheaters) {
     htmlForTimetable += 
-      "<div class='row'><div class='col-md-12'>" +
-        "<p><strong>Theater " + i + "</strong></p>" +
-        "<div class='row'>" +
-          "<div class='col-md-3'><p>12:00pm</p><select id='" + i + "_1200'>" + htmlForSelector + "</select></div>" +
-          "<div class='col-md-3'><p>3:00pm</p><select id='" + i + "_1500'>" + htmlForSelector + "</select></div>" +
-          "<div class='col-md-3'><p>6:00pm</p><select id='" + i + "_1800'>" + htmlForSelector + "</select></div>" +
-          "<div class='col-md-3'><p>9:00pm</p><select id='" + i + "_2100'>" + htmlForSelector + "</select></div>" +
-        "</div>";
-     "</div></div>";
+      "<div class='row'>" + 
+        "<div class='col-md-12 theaterRoomRow'>" +
+          "<p><strong>Theater " + i + "</strong></p>" +
+          "<div class='row'>" +
+            "<div class='col-md-3'><p>12:00pm</p><select id='" + i + "_1200'>" + htmlForSelector + "</select></div>" +
+            "<div class='col-md-3'><p>3:00pm</p><select id='" + i + "_1500'>" + htmlForSelector + "</select></div>" +
+            "<div class='col-md-3'><p>6:00pm</p><select id='" + i + "_1800'>" + htmlForSelector + "</select></div>" +
+            "<div class='col-md-3'><p>9:00pm</p><select id='" + i + "_2100'>" + htmlForSelector + "</select></div>" +
+          "</div>" +
+        "</div>" +
+     "</div>";
     i++;
   }
   timetable.html(htmlForTimetable);
@@ -114,6 +116,8 @@ $(document).ready(function() {
       alert("Please submit or cancel adding a movie");
     } else {
       $("#inputMovieNameDisplay").hide();
+      $("#toggleAddMovie").hide();
+      $("#doneEnteringMoviesButton").hide();
       $("#howManyTheatersPanel").show();
     }
     console.log(movieDatabase);
@@ -122,6 +126,7 @@ $(document).ready(function() {
   $("#submitHowManyTheaterPanelButton").click(function() {
     var theaters = parseInt($("#inputHowManyTheaters").val());
     generateTimetableForm(movieDatabase, theaters);
+    $("#howManyTheatersPanel").hide();
   });
 
   $("#toggleAddMovie").click(function() {
